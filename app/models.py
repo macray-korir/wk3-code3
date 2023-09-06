@@ -16,7 +16,7 @@ class Restaurant(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     price = Column(Integer)
-    reviews = relationship('Reviews', backref= backref('restaurant'))
+    reviews = relationship('Reviews', backref= backref('restaurant'))# Define the one-to-many relationship with Review
     
     def reviews(self):
         return self.reviews
@@ -32,7 +32,7 @@ class Customer(Base):
     first_name = Column(String)
     last_name = Column(String)
 
-    reviews = relationship('Reviews', backref= backref('customer'))
+    reviews = relationship('Reviews', backref= backref('customer')) # one-to-many relationship with Review
 
 # reviews delivarables
 
